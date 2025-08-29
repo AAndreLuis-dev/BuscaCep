@@ -1,9 +1,9 @@
-import type { Address, ApiErrorType } from '../types';
+import type { Address, ApiError } from '../types';
 
-export class ApiError extends Error {
-  public readonly type: ApiErrorType['type'];
+export class ApiErrorClass extends Error {
+  public readonly type: ApiError['type'];
 
-  constructor(message: string, type: ApiErrorType['type']) {
+  constructor(message: string, type: ApiError['type']) {
     super(message);
     this.name = 'ApiError';
     this.type = type;
@@ -17,55 +17,55 @@ export class CEPService {
     const cleanCEP = cep.replace(/\D/g, '');
     
     if (cleanCEP.length !== 8) {
-      throw new ApiError('CEP deve conter 8 dígitos', 'invalid_format');
+      throw new ApiErrorClass('CEP deve conter 8 dígitos', 'invalid_format');
     }
 
     try {
       const response = await fetch(`${this.BASE_URL}/${cleanCEP}/json/`);
       
       if (!response.ok) {
-        throw new ApiError('Erro no servidor', 'server_error');
+        throw new ApiErrorClass('Erro no servidor', 'server_error');
       }
 
       const data = await response.json();
       
       if (data.erro) {
-        throw new ApiError('CEP não encontrado', 'not_found');
+        throw new ApiErrorClass('CEP não encontrado', 'not_found');
       }
 
       return data;
     } catch (error) {
-      if (error instanceof ApiError) {
+      if (error instanceof ApiErrorClass) {
         throw error;
       }
-      throw new ApiError('Erro de conexão. Verifique sua internet.', 'network');
+      throw new ApiErrorClass('Erro de conexão. Verifique sua internet.', 'network');
     }
   }
 
   static async searchByAddress(uf: string, city: string, street: string): Promise<Address[]> {
     if (!uf || !city || !street || street.length < 3) {
-      throw new ApiError('UF, Cidade e Logradouro (mín. 3 caracteres) são obrigatórios.', 'invalid_format');
+      throw new ApiErrorClass('UF, Cidade e Logradouro (mín. 3 caracteres) são obrigatórios.', 'invalid_format');
     }
 
     try {
       const response = await fetch(`${this.BASE_URL}/${uf}/${encodeURIComponent(city)}/${encodeURIComponent(street)}/json/`);
       
       if (!response.ok) {
-        throw new ApiError('Erro no servidor', 'server_error');
+        throw new ApiErrorClass('Erro no servidor', 'server_error');
       }
 
       const data = await response.json();
       
       if (!Array.isArray(data) || data.length === 0) {
-        throw new ApiError('Nenhum endereço encontrado para os dados informados.', 'not_found');
+        throw new ApiErrorClass('Nenhum endereço encontrado para os dados informados.', 'not_found');
       }
 
-      return data.slice(0, 50); // Limite de 50 resultados
+      return data.slice(0, 50); 
     } catch (error) {
-      if (error instanceof ApiError) {
+      if (error instanceof ApiErrorClass) {
         throw error;
       }
-      throw new ApiError('Erro de conexão. Verifique sua internet.', 'network');
+      throw new ApiErrorClass('Erro de conexão. Verifique sua internet.', 'network');
     }
   }
 }

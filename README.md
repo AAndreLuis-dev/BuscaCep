@@ -1,69 +1,74 @@
-# React + TypeScript + Vite
+# CEP Finder - Consulta Profissional de Endereços
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma aplicação moderna e profissional para consulta de CEPs brasileiros, desenvolvida com React, TypeScript e Tailwind CSS.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Nível Básico ✅
+- ✅ Projeto React.js criado do zero com Vite
+- ✅ Consumo da API ViaCEP
+- ✅ Listagem de dados em tela
 
-## Expanding the ESLint configuration
+### Nível Intermediário ✅
+- ✅ Tratamento de erros com mensagens específicas
+- ✅ Campo de busca para filtrar resultados
+- ✅ Loading state durante chamadas à API
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Nível Avançado ✅
+- ✅ Paginação dos resultados
+- ✅ Modal com detalhes ao clicar em um endereço
+- ✅ Estilização profissional com Tailwind CSS
+- ✅ Código organizado em componentes reutilizáveis
+- ✅ **Extras:** Histórico de buscas, busca por endereço, debounce, localStorage
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tecnologias
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide React (ícones)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📦 Instalação
+
+```bash
+# Clone o repositório
+git clone [URL_DO_REPOSITORIO]
+```
+# Entre no diretório
+```bash
+cd BuscaCep
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Instale as dependências
+```bash
+npm install
 ```
+
+# Execute o projeto
+
+```bash
+npm run dev
+```
+
+## 📁 Estrutura do Projeto
+
+
+src/
+├── components/       # Componentes reutilizáveis
+├── hooks/           # Custom hooks
+├── services/        # Serviços de API
+├── styles/          # Estilos globais
+├── types/           # Definições TypeScript
+├── utils/           # Funções utilitárias
+└── App.tsx          # Componente principal
+
+## 🔍 Funcionalidades Detalhadas
+- Busca por CEP: Digite um CEP válido para encontrar o endereço
+- Busca por Endereço: Busque por estado, cidade e logradouro
+- Filtro de Resultados: Filtre endereços já carregados
+- Paginação: Navegue entre páginas de resultados
+- Modal de Detalhes: Veja informações completas do endereço
+- Histórico: Acesse rapidamente buscas anteriores
+- Responsivo: Interface adaptada para todos os dispositivos
+

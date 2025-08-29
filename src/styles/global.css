@@ -4,23 +4,23 @@
 
 @layer base {
   body {
-    @apply bg-horizon-bg text-horizon-text;
+    @apply bg-horizon text-horizon-text;
   }
-  
+ 
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
-  
+ 
   ::-webkit-scrollbar-track {
-    @apply bg-horizon-bg-secondary;
+    @apply bg-horizon-secondary;
   }
-  
+ 
   ::-webkit-scrollbar-thumb {
     @apply bg-horizon-contrast rounded-full;
   }
-  
+ 
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-horizon-contrast-light;
   }
@@ -30,7 +30,7 @@
   .glass-effect {
     @apply backdrop-blur-lg bg-horizon-contrast/30 border border-horizon-contrast-light/20;
   }
-  
+ 
   .glow-primary {
     @apply shadow-lg shadow-horizon-primary/20;
   }

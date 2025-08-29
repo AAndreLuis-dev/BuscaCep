@@ -24,8 +24,11 @@ export interface ApiError {
 }
 
 export class CustomApiError extends Error {
-  constructor(message: string, public type: ApiError['type']) {
+  public type: ApiError['type'];
+
+  constructor(message: string, type: ApiError['type']) {
     super(message);
     this.name = 'ApiError';
+    this.type = type;
   }
 }
