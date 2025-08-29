@@ -105,7 +105,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
               value={cepQuery}
               onChange={handleCEPChange}
               placeholder="Digite o CEP (ex: 01310-100)"
-              className="w-full px-4 py-3 bg-horizon-bg-secondary border border-horizon-contrast-light rounded-lg focus:ring-2 focus:ring-horizon-primary focus:border-transparent transition-all text-horizon-text placeholder-horizon-text-muted"
+              className="w-full px-4 py-3 bg-horizon-contrast border border-horizon-contrast-light rounded-lg focus:ring-2 focus:ring-horizon-primary focus:border-transparent transition-all text-horizon-primary placeholder-horizon-text-muted"
               maxLength={9}
             />
           </div>
@@ -130,7 +130,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({
               onChange={(e) =>
                 setAddressQuery((prev) => ({ ...prev, uf: e.target.value }))
               }
-              // ALTERADO: Fundo do input para dar mais destaque
               className="px-4 py-3 bg-horizon-contrast border border-horizon-contrast-light rounded-lg focus:ring-2 focus:ring-horizon-primary focus:border-transparent transition-all text-horizon-text"
               required
             >
@@ -148,7 +147,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({
                 setAddressQuery((prev) => ({ ...prev, city: e.target.value }))
               }
               placeholder="Cidade"
-              // ALTERADO: Fundo do input para dar mais destaque
               className="px-4 py-3 bg-horizon-contrast border border-horizon-contrast-light rounded-lg focus:ring-2 focus:ring-horizon-primary focus:border-transparent transition-all text-horizon-text placeholder-horizon-text-muted"
               required
             />
@@ -159,7 +157,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({
                 setAddressQuery((prev) => ({ ...prev, street: e.target.value }))
               }
               placeholder="Logradouro (mín. 3 caracteres)"
-              // ALTERADO: Fundo do input para dar mais destaque
               className="px-4 py-3 bg-horizon-contrast border border-horizon-contrast-light rounded-lg focus:ring-2 focus:ring-horizon-primary focus:border-transparent transition-all text-horizon-text placeholder-horizon-text-muted"
               minLength={3}
               required
