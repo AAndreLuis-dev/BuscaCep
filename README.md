@@ -2,25 +2,6 @@
 
 Uma aplicação moderna e profissional para consulta de CEPs brasileiros, desenvolvida com React, TypeScript e Tailwind CSS.
 
-## 🚀 Funcionalidades
-
-### Nível Básico ✅
-- ✅ Projeto React.js criado do zero com Vite
-- ✅ Consumo da API ViaCEP
-- ✅ Listagem de dados em tela
-
-### Nível Intermediário ✅
-- ✅ Tratamento de erros com mensagens específicas
-- ✅ Campo de busca para filtrar resultados
-- ✅ Loading state durante chamadas à API
-
-### Nível Avançado ✅
-- ✅ Paginação dos resultados
-- ✅ Modal com detalhes ao clicar em um endereço
-- ✅ Estilização profissional com Tailwind CSS
-- ✅ Código organizado em componentes reutilizáveis
-- ✅ **Extras:** Histórico de buscas, busca por endereço, debounce, localStorage
-
 ## 🛠️ Tecnologias
 
 - React 18
@@ -33,7 +14,7 @@ Uma aplicação moderna e profissional para consulta de CEPs brasileiros, desenv
 
 ```bash
 # Clone o repositório
-git clone [URL_DO_REPOSITORIO]
+git clone https://github.com/AAndreLuis-dev/BuscaCep
 ```
 # Entre no diretório
 ```bash
@@ -55,13 +36,21 @@ npm run dev
 
 
 src/
+
 ├── components/       # Componentes reutilizáveis
+
 ├── hooks/           # Custom hooks
+
 ├── services/        # Serviços de API
+
 ├── styles/          # Estilos globais
+
 ├── types/           # Definições TypeScript
+
 ├── utils/           # Funções utilitárias
+
 └── App.tsx          # Componente principal
+
 
 ## 🔍 Funcionalidades Detalhadas
 - Busca por CEP: Digite um CEP válido para encontrar o endereço
