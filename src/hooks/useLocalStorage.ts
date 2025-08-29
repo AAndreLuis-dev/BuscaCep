@@ -6,7 +6,7 @@ export const useLocalStorage = <T,>(key: string, initialValue: T) => {
       const item = window.localStorage.getItem(key);
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
-      console.error(error);
+      console.error('Error reading from localStorage:', error);
       return initialValue;
     }
   });

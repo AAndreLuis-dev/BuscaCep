@@ -1,4 +1,4 @@
-import type { Address, ApiErrorType } from '../types/address';
+import type { Address, ApiErrorType } from '../types';
 
 export class ApiError extends Error {
   public readonly type: ApiErrorType['type'];

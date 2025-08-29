@@ -18,7 +18,14 @@ export interface SearchHistory {
   address: Address;
 }
 
-export interface ApiErrorType {
+export interface ApiError {
   message: string;
   type: 'network' | 'not_found' | 'invalid_format' | 'server_error';
+}
+
+export class CustomApiError extends Error {
+  constructor(message: string, public type: ApiError['type']) {
+    super(message);
+    this.name = 'ApiError';
+  }
 }
